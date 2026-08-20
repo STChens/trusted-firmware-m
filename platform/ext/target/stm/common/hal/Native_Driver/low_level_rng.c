@@ -65,6 +65,15 @@ int RNG_Init(void)
   __HAL_RCC_RNG_CONFIG(RCC_RNGCLKSOURCE_HSI);
 #endif
   /* RNG Peripheral clock enable */
+  RCC_PeriphCLKInitTypeDef PeriphClkInitStruct = {0};
+  PeriphClkInitStruct.PeriphClockSelection = RCC_PERIPHCLK_RNG;
+  PeriphClkInitStruct.RngClockSelection = RCC_RNGCLKSOURCE_HSI48;
+  if (HAL_RCCEx_PeriphCLKConfig(&PeriphClkInitStruct) != HAL_OK)
+  {
+    return -2;
+  }
+
+  /* Peripheral clock enable */
   __HAL_RCC_RNG_CLK_ENABLE();
 
   /* Initialize RNG instance */
