@@ -1,6 +1,6 @@
 # Make sure setenv.sh is executed once before running this script
 
-WORK_DIR=/c/ST/Cube/TFM
+WORK_DIR=$PWD
 toolchain=gnu
 BUILD_DIR_S=$WORK_DIR/$toolchain/build_s
 rm -rf $BUILD_DIR_S
