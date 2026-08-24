@@ -347,6 +347,7 @@ static void SetSysClock(void)
 }
 #endif
 
+#if !defined(BL2)
 /**
   * @brief System Clock Configuration
   * @retval None
@@ -420,12 +421,15 @@ void HAL_MspInit(void)
 
   /* USER CODE END MspInit 1 */
 }
+#endif
 
 FIH_RET_TYPE(enum tfm_hal_status_t) tfm_hal_set_up_static_boundaries(
                                             uintptr_t *p_spm_boundary)
 {
+#if !defined(BL2)
   HAL_Init();
   SystemClock_Config();
+#endif
   /* Set up isolation boundaries between SPE and NSPE */
   /* Configures non-secure memory spaces in the target */
   uFlowStage = FLOW_STAGE_CFG;

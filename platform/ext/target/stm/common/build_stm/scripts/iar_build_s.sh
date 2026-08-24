@@ -11,7 +11,8 @@ TOOL_CHAIN=$TFM_SOURCE/toolchain_IARARM.cmake
 TARGET=stm/stm32h573i_dk
 
 #profile
-PROFILE=profile_medium
+PROFILE=profile_large
+#PROFILE=profile_medium
 
 # library
 # MCUBOOT_SRC=-DMCUBOOT_PATH=%WORK_DIR%/mcuboot-src

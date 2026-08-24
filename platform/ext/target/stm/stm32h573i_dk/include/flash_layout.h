@@ -81,7 +81,11 @@
 #endif /* FLASH_AREA_PERSO_OFFSET % FLASH_AREA_IMAGE_SECTOR_SIZE) != 0 */
 
 /* area for BL2 code protected by hdp */
+#if !defined(BL2)
+#define FLASH_AREA_BL2_OFFSET           (0) // We use OEMiROT so the offset is 0
+#else
 #define FLASH_AREA_BL2_OFFSET           (FLASH_AREA_PERSO_OFFSET+FLASH_AREA_PERSO_SIZE )
+#endif
 #define FLASH_AREA_BL2_SIZE             (0x18000)
 /* HDP area end at this address */
 #define FLASH_BL2_HDP_END               (FLASH_AREA_BL2_OFFSET+FLASH_AREA_BL2_SIZE-1)
