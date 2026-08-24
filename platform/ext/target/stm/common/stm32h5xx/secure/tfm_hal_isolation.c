@@ -355,6 +355,8 @@ void SystemClock_Config(void)
 {
   RCC_OscInitTypeDef RCC_OscInitStruct = {0};
   RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
+  
+  HAL_RCC_DeInit();
 
   /** Configure the main internal regulator output voltage
   */
