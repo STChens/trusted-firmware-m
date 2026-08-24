@@ -13,7 +13,8 @@ TOOL_CHAIN=$BUILD_DIR_S/api_ns/cmake/toolchain_ns_GNUARM.cmake
 TARGET=stm/stm32h573i_dk
 
 #profile
-PROFILE=profile_medium
+#PROFILE=profile_medium
+PROFILE=profile_large
 
 # library
 # MCUBOOT_SRC=-DMCUBOOT_PATH=%WORK_DIR%/mcuboot-src
